@@ -6,10 +6,14 @@ This is a simple web crawler implemented in Python using requests and BeautifulS
 
 ## Features
 
-_ **Recursively crawls websites** to discover links.
-_ **Avoids revisiting URLs** to prevent infinite loops.
-_ **Handles HTTP request errors** gracefully.
-_ **Supports configurable depth** to limit crawling depth.
+_ **Recursively crawls websites** 
+to discover links.
+_ **Avoids revisiting URLs** 
+to prevent infinite loops.
+_ **Handles HTTP request errors** 
+gracefully.
+_ **Supports configurable depth** 
+to limit crawling depth.
 
 ## Requirements
 
@@ -20,8 +24,9 @@ _ **Supports configurable depth** to limit crawling depth.
 
 Install the dependencies using:
 
-```sh
+```
 pip install requests beautifulsoup4
+```
 
 **Usage**
 
