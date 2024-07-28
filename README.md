@@ -17,14 +17,26 @@ beautifulsoup4
 
 Install the dependencies using:
 
-```pip install requests beautifulsoup4```
+```
+pip install requests beautifulsoup4
+
+```
 
 **Usage**
 
 Clone the repository:
 
-```git clone https://github.com/ls-saurabh/webcrawl.git```
+```
+git clone https://github.com/ls-saurabh/webcrawl.git
 
-```cd webcrawl```
+```
 
-Run the script: ```python crawl.py```
+```
+cd webcrawl
+
+```
+
+Run the script: ```
+python crawl.py
+
+```
