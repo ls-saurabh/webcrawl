@@ -4,22 +4,24 @@
 
 This is a simple web crawler implemented in Python using requests and BeautifulSoup. It recursively follows links from a given starting URL and prints out all the unique HTTP links it encounters.
 
-**Features**
+## Features
 
-Recursively crawls websites to discover links.Avoids revisiting URLs to prevent infinite loops.Handles HTTP request errors gracefully.Supports configurable depth to limit crawling depth.
+_ **Recursively crawls websites** to discover links.
+_ **Avoids revisiting URLs** to prevent infinite loops.
+_ **Handles HTTP request errors** gracefully.
+_ **Supports configurable depth** to limit crawling depth.
 
-**Requirements**
+## Requirements
 
-Python 3.x
-requests
-beautifulsoup4
+- **Python 3.x**
+- **requests**
+- **beautifulsoup4**
 
 
 Install the dependencies using:
 
-```
+```sh
 pip install requests beautifulsoup4
-```
 
 **Usage**
 
