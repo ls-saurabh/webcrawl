@@ -1,5 +1,3 @@
-# webcrawl
-
 ## Web Crawler
 
 This is a simple web crawler implemented in Python using requests and BeautifulSoup. It recursively follows links from a given starting URL and prints out all the unique HTTP links it encounters.
