@@ -25,6 +25,6 @@ Clone the repository:
 
 ```git clone https://github.com/ls-saurabh/webcrawl.git```
 
-cd webcrawl
+```cd webcrawl```
 
 Run the script: ```python crawl.py```
