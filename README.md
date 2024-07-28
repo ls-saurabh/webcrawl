@@ -24,7 +24,7 @@ Install the dependencies using:
 pip install requests beautifulsoup4
 ```
 
-**Usage**
+## Usage
 
 Clone the repository:
 ```
