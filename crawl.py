@@ -1,38 +1,38 @@
+# Developed by ls.saurabh
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-import time
 
-visited_urls = set()
-
-def crawl_website(url, depth=2):
-    if depth == 0:
-        return
-    
-    if url in visited_urls:
-        return
-
-    visited_urls.add(url)
-    
+def scrape_website(url):
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"Failed to retrieve {url}: {e}")
-        return
+        # Add headers to prevent caching
+        headers = {'Cache-Control': 'no-cache'}
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()  # Raise an exception for HTTP errors
 
-    soup = BeautifulSoup(response.text, 'html.parser')
+        soup = BeautifulSoup(response.content, 'html.parser')
+        links = soup.find_all('a', href=True)
+        urls = [urljoin(url, link['href']) for link in links]
 
-    links = soup.find_all('a', href=True)
-    for link in links:
-        href = link.get('href')
-        full_url = urljoin(url, href)
-        if full_url.startswith('http'):
-            print(full_url)
-            # Delay to avoid overwhelming the server
-            time.sleep(1)
-            crawl_website(full_url, depth - 1)
+        return list(set(urls))  # Remove duplicate URLs
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+        return []
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return []
 
-# Example usage
-url = input("Enter URL: ")
-crawl_website(url)
+if __name__ == "__main__":
+    while True:
+        url = input("Enter a URL to scrape (or 'exit' to quit): ").strip()
+        if url.lower() == 'exit':
+            break
+
+        scraped_urls = scrape_website(url)
+        if scraped_urls:
+            print("Scraped URLs:")
+            for idx, scraped_url in enumerate(scraped_urls, 1):
+                print(f"{idx}: {scraped_url}")
+        else:
+            print("No URLs found or an error occurred.")
